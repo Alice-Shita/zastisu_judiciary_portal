@@ -1,21 +1,13 @@
-from flask import (
-    Flask,
-    render_template,
-    request,
-    redirect,
-    session,
-    flash,
-    send_from_directory
-)
-import json
+from flask import Flask, render_template, request, redirect, session
 from werkzeug.utils import secure_filename
 import os
 
 app = Flask(
-    __name__,
-    template_folder="judiciary_templates",
-    static_folder="judiciary_static"
+name,
+template_folder="judiciary_templates",
+static_folder="judiciary_static"
 )
+
 
 
 app.secret_key = "judiciary_secret_key"
