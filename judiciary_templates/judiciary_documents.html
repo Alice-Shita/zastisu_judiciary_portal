@@ -1,0 +1,68 @@
+{% extends "judiciary_layout.html" %}
+
+
+{% block title %}
+
+Documents Upload
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="dashboard-card">
+
+
+<h2>
+📄 Upload Documents
+</h2>
+
+
+<p>
+Upload clear copies of the required documents.
+</p>
+
+
+
+<form method="POST"
+enctype="multipart/form-data">
+
+
+<label>
+Student ID
+</label>
+
+<input
+type="file"
+name="student_id"
+accept=".png,.jpg,.jpeg,.pdf"
+required>
+
+
+<label>
+Proof of Payment
+</label>
+
+<input
+type="file"
+name="payment"
+accept=".png,.jpg,.jpeg,.pdf"
+required>
+
+
+<button>
+
+Upload & Continue
+
+</button>
+
+
+</form>
+
+
+</div>
+
+
+{% endblock %}

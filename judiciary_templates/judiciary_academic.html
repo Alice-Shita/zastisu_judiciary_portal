@@ -1,0 +1,82 @@
+{% extends "judiciary_layout.html" %}
+
+{% block title %}
+Academic Information
+{% endblock %}
+
+{% block content %}
+
+<div class="dashboard-card">
+
+<h2>
+
+Academic Information
+
+</h2>
+
+<p>
+
+Complete your academic details.
+
+</p>
+
+<form method="POST">
+
+<label>
+
+Programme
+
+</label>
+
+<input
+type="text"
+name="programme"
+placeholder="e.g Aeronautical Electronics Engineering"
+required>
+
+<label>
+
+Year of Study
+
+</label>
+
+<select
+name="year"
+required>
+
+<option value="">
+Select
+</option>
+
+<option>First Year</option>
+
+<option>Second Year</option>
+
+<option>Third Year</option>
+
+<option>Graduate</option>
+
+</select>
+
+<label>
+
+Student Number
+
+</label>
+
+<input
+type="text"
+name="student_number"
+required>
+
+<button>
+
+Save & Continue
+
+</button>
+
+</form>
+
+</div>
+
+{% endblock %}

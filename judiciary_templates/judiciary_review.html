@@ -1,0 +1,303 @@
+{% extends "judiciary_layout.html" %}
+
+
+{% block title %}
+
+<div class="review-card">
+
+Review Application
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="review-container">
+
+
+<div class="review-card">
+
+
+<h2>
+✅ Review Your Application
+</h2>
+
+
+
+<div class="review-section">
+
+
+<h3>
+👤 Personal Information
+</h3>
+
+
+<div class="review-item">
+
+<span class="review-label">
+Full Name
+</span>
+
+<span class="review-value">
+{{ personal.fullname }}
+</span>
+
+</div>
+
+
+<div class="review-item">
+
+<span class="review-label">
+Student ID
+</span>
+
+<span class="review-value">
+{{ personal.student_id }}
+</span>
+
+</div>
+
+
+<div class="review-item">
+
+<span class="review-label">
+NRC
+</span>
+
+<span class="review-value">
+{{ personal.nrc }}
+</span>
+
+</div>
+
+
+<div class="review-item">
+
+<span class="review-label">
+Phone
+</span>
+
+<span class="review-value">
+{{ personal.phone }}
+</span>
+
+</div>
+
+
+<div class="review-item">
+
+<span class="review-label">
+Email
+</span>
+
+<span class="review-value">
+{{ personal.email }}
+</span>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="review-section">
+
+
+<h3>
+🎓 Academic Information
+</h3>
+
+
+<div class="review-item">
+
+<span class="review-label">
+Programme
+</span>
+
+<span class="review-value">
+{{ academic.programme }}
+</span>
+
+</div>
+
+
+<div class="review-item">
+
+<span class="review-label">
+Year of Study
+</span>
+
+<span class="review-value">
+{{ academic.year }}
+</span>
+
+</div>
+
+
+<div class="review-item">
+
+<span class="review-label">
+Student Number
+</span>
+
+<span class="review-value">
+{{ academic.student_number }}
+</span>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="review-section">
+
+
+<h3>
+⚖ Judiciary Assessment
+</h3>
+
+
+<p>
+You have completed the judiciary assessment questions.
+</p>
+
+
+<p>
+
+Total Questions Answered:
+
+<strong>
+{{ answers|length }}
+</strong>
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="review-section">
+
+
+<h3>
+📄 Documents
+</h3>
+
+
+<div class="review-item">
+
+<span class="review-label">
+Student ID
+</span>
+
+<span class="review-value">
+
+✅ Uploaded
+
+</span>
+
+</div>
+
+
+
+<div class="review-item">
+
+<span class="review-label">
+Proof of Payment
+</span>
+
+<span class="review-value">
+
+✅ Uploaded
+
+</span>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="review-section">
+
+
+<h3>
+⚠ Final Review Notice
+</h3>
+
+
+<p>
+Please carefully review all information displayed above before submitting.
+</p>
+
+
+<p>
+Your application sections have been completed and are now locked. 
+Once submitted, your application will be forwarded to the ZASTISU Judiciary selection committee for review.
+</p>
+
+
+<p>
+By clicking <strong>Submit Application</strong>, you confirm that all information provided is accurate and truthful.
+</p>
+
+
+</div>
+
+
+<form method="POST"
+onsubmit="return confirmSubmission();">
+
+
+<button class="submit-btn">
+
+Submit Application
+
+</button>
+
+
+</form>
+
+
+
+<script>
+
+function confirmSubmission(){
+
+    let confirmSubmit = confirm(
+
+        "Are you sure you want to submit your ZASTISU Judiciary application?\n\nAfter submission, you will not be able to edit your application."
+
+    );
+
+
+    return confirmSubmit;
+
+}
+
+</script>
+
+
+
+</div>
+
+
+</div>
+
+
+{% endblock %}

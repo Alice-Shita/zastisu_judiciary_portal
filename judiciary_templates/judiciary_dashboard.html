@@ -1,0 +1,246 @@
+{% extends "judiciary_layout.html" %}
+
+
+{% block title %}
+
+Judiciary Dashboard
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="dashboard-container">
+
+
+<div class="dashboard-card">
+
+
+<h2>
+Welcome, {{name}}
+</h2>
+
+
+<p class="subtitle">
+ZASTISU Judiciary Application Portal
+</p>
+
+
+
+<div class="progress-box">
+
+
+<h3>
+Application Progress
+</h3>
+
+
+<div class="progress-bar">
+
+<div class="progress-fill"
+style="width: {{progress}}%;">
+
+</div>
+
+</div>
+
+
+<p>
+{{progress}}% Complete
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="steps-container">
+
+
+
+<div class="step-card">
+
+<h3>
+👤 Personal Details
+</h3>
+
+<p>
+Status:
+<strong>
+{{personal_status}}
+</strong>
+</p>
+
+
+{% if personal_status == "Not Started" %}
+
+<a href="/apply" class="dashboard-btn">
+Start
+</a>
+
+{% endif %}
+
+
+</div>
+
+
+
+
+
+<div class="step-card">
+
+<h3>
+🎓 Academic Details
+</h3>
+
+
+<p>
+Status:
+<strong>
+{{academic_status}}
+</strong>
+</p>
+
+
+{% if academic_status == "Available" %}
+
+<a href="/academic" class="dashboard-btn">
+Continue
+</a>
+
+{% endif %}
+
+
+</div>
+
+
+
+
+
+<div class="step-card">
+
+<h3>
+⚖ Judiciary Questions
+</h3>
+
+
+<p>
+Status:
+<strong>
+{{questions_status}}
+</strong>
+</p>
+
+
+{% if questions_status == "Available" %}
+
+<a href="/questions" class="dashboard-btn">
+Answer Questions
+</a>
+
+{% endif %}
+
+
+</div>
+
+
+
+
+
+<div class="step-card">
+
+<h3>
+📄 Documents
+</h3>
+
+
+<p>
+Status:
+<strong>
+{{documents_status}}
+</strong>
+</p>
+
+
+{% if documents_status == "Available" %}
+
+<a href="/documents" class="dashboard-btn">
+Upload Documents
+</a>
+
+{% endif %}
+
+
+</div>
+
+
+
+
+
+<div class="step-card">
+
+<h3>
+🔍 Review & Submit
+</h3>
+
+
+<p>
+Status:
+<strong>
+{{review_status}}
+</strong>
+</p>
+
+
+{% if review_status == "Available" %}
+
+<a href="/review" class="dashboard-btn">
+Review Application
+</a>
+
+{% endif %}
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+{% if progress == 100 %}
+
+<div class="submitted-box">
+
+<h3>
+✅ Application Submitted
+</h3>
+
+
+<p>
+Your ZASTISU Judiciary application has been successfully submitted and is now under review.
+</p>
+
+
+</div>
+
+{% endif %}
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+{% endblock %}

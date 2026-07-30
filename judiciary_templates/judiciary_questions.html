@@ -1,0 +1,120 @@
+{% extends "judiciary_layout.html" %}
+
+
+{% block title %}
+Judiciary Assessment
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="dashboard-card">
+
+
+<h2>
+⚖ Judiciary Assessment
+</h2>
+
+
+<p>
+Answer the following questions carefully.
+</p>
+
+
+
+<form method="POST">
+
+
+<label>
+1. What does justice mean to you, and what principles should guide a Judiciary member?
+</label>
+
+<textarea
+name="q1"
+rows="5"
+required></textarea>
+
+
+
+<label>
+2. A close friend appears before the Judiciary accused of misconduct. How would you handle the situation?
+</label>
+
+<textarea
+name="q2"
+rows="5"
+required></textarea>
+
+
+
+<label>
+3. Two students give conflicting statements about an incident. What steps would you take before making a decision?
+</label>
+
+<textarea
+name="q3"
+rows="5"
+required></textarea>
+
+
+
+<label>
+4. If elected as Chairperson, what would be your priorities during your first month?
+</label>
+
+<textarea
+name="q4"
+rows="5"
+required></textarea>
+
+
+
+<label>
+5. How would you resolve disagreements between Judiciary members?
+</label>
+
+<textarea
+name="q5"
+rows="5"
+required></textarea>
+
+
+
+<label>
+6. The Treasurer discovers missing funds. What action should be taken?
+</label>
+
+<textarea
+name="q6"
+rows="5"
+required></textarea>
+
+
+
+<label>
+7. Why should you be selected as a Judiciary member?
+</label>
+
+<textarea
+name="q7"
+rows="5"
+required></textarea>
+
+
+
+<button>
+
+Submit Assessment
+
+</button>
+
+
+</form>
+
+
+</div>
+
+
+{% endblock %}

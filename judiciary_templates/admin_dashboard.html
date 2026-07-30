@@ -1,0 +1,193 @@
+{% extends "judiciary_layout.html" %}
+
+{% block title %}
+Admin Dashboard
+{% endblock %}
+
+{% block content %}
+
+<div class="admin-dashboard">
+
+    <div class="admin-header">
+
+        <div>
+
+            <h1>⚖ Judiciary Administration</h1>
+
+            <p>
+                Welcome back,
+                <strong>{{ admin }}</strong>
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+            <h3>Total</h3>
+            <h2>{{ total }}</h2>
+            <span>Applications</span>
+        </div>
+
+        <div class="stat-card pending">
+            <h3>Pending</h3>
+            <h2>{{ pending }}</h2>
+            <span>Awaiting Review</span>
+        </div>
+
+        <div class="stat-card short">
+            <h3>Shortlisted</h3>
+            <h2>{{ shortlisted }}</h2>
+            <span>Selected</span>
+        </div>
+
+        <div class="stat-card approved">
+            <h3>Approved</h3>
+            <h2>{{ approved }}</h2>
+            <span>Accepted</span>
+        </div>
+
+        <div class="stat-card rejected">
+            <h3>Rejected</h3>
+            <h2>{{ rejected }}</h2>
+            <span>Declined</span>
+        </div>
+
+    </div>
+
+
+    <div class="table-card">
+
+        <div class="table-header">
+
+            <h2>Applications</h2>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="🔍 Search applicant..."
+                onkeyup="searchTable()"
+            >
+
+        </div>
+
+        <div class="table-responsive">
+
+            <table id="appTable">
+
+                <thead>
+
+                    <tr>
+                        <th>Name</th>
+                        <th>Student ID</th>
+                        <th>Status</th>
+                        <th>Recommendation</th>
+                        <th>Action</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                {% for app in applications %}
+
+                    <tr>
+
+                        <td><strong>{{ app.personal.fullname }}</strong></td>
+
+                        <td>{{ app.personal.student_id }}</td>
+
+                        <td>
+
+                            {% if app.status=="Approved" %}
+
+                                <span class="badge approved">Approved</span>
+
+                            {% elif app.status=="Rejected" %}
+
+                                <span class="badge rejected">Rejected</span>
+
+                            {% elif app.status=="Shortlisted" %}
+
+                                <span class="badge short">Shortlisted</span>
+
+                            {% else %}
+
+                                <span class="badge pending">Pending</span>
+
+                            {% endif %}
+
+                        </td>
+
+                        <td>
+
+                            {{ app.get("recommended_role","Pending") }}
+
+                        </td>
+
+                        <td>
+
+                            <a
+                                href="/admin/application/{{ app.user_id }}"
+                                class="view-btn">
+
+                                View
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+                {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <div class="logout-area">
+
+        <a
+            href="/admin/logout"
+            class="logout-btn">
+
+            Logout
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function searchTable(){
+
+    let input=document.getElementById("searchInput").value.toLowerCase();
+
+    let rows=document.querySelectorAll("#appTable tbody tr");
+
+    rows.forEach(function(row){
+
+        row.style.display=row.innerText.toLowerCase().includes(input)
+
+        ? ""
+
+        : "none";
+
+    });
+
+}
+
+</script>
+
+{% endblock %}

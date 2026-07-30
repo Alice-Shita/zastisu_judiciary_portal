@@ -1,0 +1,109 @@
+{% extends "judiciary_layout.html" %}
+
+{% block title %}
+Personal Information
+{% endblock %}
+
+{% block content %}
+
+<div class="dashboard-card">
+
+<h2>
+Personal Information
+</h2>
+
+<p>
+Complete your personal details below.
+</p>
+
+<form method="POST">
+
+<label>Applicant Name</label>
+
+<input
+type="text"
+value="{{ applicant_name }}"
+readonly>
+
+<label>Student ID</label>
+
+<input
+type="text"
+name="student_id"
+required>
+
+<label>Full Name</label>
+
+<input
+type="text"
+name="fullname"
+required>
+
+<label>NRC Number</label>
+
+<input
+type="text"
+name="nrc"
+required>
+
+<label>Date of Birth</label>
+
+<input
+type="date"
+name="dob"
+min="1950-01-01"
+max="2026-12-31"
+required>
+
+<label>Gender</label>
+
+<select
+name="gender"
+required>
+
+<option value="">
+Select Gender
+</option>
+
+<option>
+Male
+</option>
+
+<option>
+Female
+</option>
+
+</select>
+
+<label>Phone Number</label>
+
+<input
+type="tel"
+name="phone"
+required>
+
+<label>Email Address</label>
+
+<input
+type="email"
+name="email"
+required>
+
+<label>Residential Address</label>
+
+<textarea
+name="address"
+rows="4"
+required></textarea>
+
+<button>
+
+Save & Continue
+
+</button>
+
+</form>
+
+</div>
+
+{% endblock %}

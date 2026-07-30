@@ -1,0 +1,53 @@
+{% extends "judiciary_layout.html" %}
+
+{% block title %}
+Administrator Login
+{% endblock %}
+
+{% block content %}
+
+<div class="login-card">
+
+    <h1>⚖️ Judiciary Administration</h1>
+
+    <p class="subtitle">
+        Sign in to manage Judiciary applications.
+    </p>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+
+        <label>Username</label>
+
+        <input
+            type="text"
+            name="username"
+            required
+        >
+
+        <label>Password</label>
+
+        <input
+            type="password"
+            name="password"
+            required
+        >
+
+        <button type="submit">
+            Login
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

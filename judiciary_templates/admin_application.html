@@ -1,0 +1,327 @@
+{% extends "judiciary_layout.html" %}
+
+{% block title %}
+Applicant Review
+{% endblock %}
+
+
+{% block content %}
+
+<div class="application-page">
+
+
+    <div class="admin-header">
+
+        <div>
+
+            <h1>{{ application.personal.fullname }}</h1>
+
+            <p>
+                Student ID:
+                <strong>{{ application.personal.student_id }}</strong>
+            </p>
+
+        </div>
+
+
+        <span class="badge
+
+        {% if application.status == 'Approved' %}
+            approved
+
+        {% elif application.status == 'Rejected' %}
+            rejected
+
+        {% elif application.status == 'Shortlisted' %}
+            short
+
+        {% else %}
+            pending
+
+        {% endif %}
+
+        ">
+
+            {{ application.status }}
+
+        </span>
+
+    </div>
+
+
+
+    <div class="info-card">
+
+        <h2>👤 Personal Information</h2>
+
+        <table>
+
+            <tr>
+                <td>Full Name</td>
+                <td>{{ application.personal.fullname }}</td>
+            </tr>
+
+            <tr>
+                <td>Student ID</td>
+                <td>{{ application.personal.student_id }}</td>
+            </tr>
+
+            <tr>
+                <td>NRC</td>
+                <td>{{ application.personal.nrc }}</td>
+            </tr>
+
+            <tr>
+                <td>Date of Birth</td>
+                <td>{{ application.personal.dob }}</td>
+            </tr>
+
+            <tr>
+                <td>Gender</td>
+                <td>{{ application.personal.gender }}</td>
+            </tr>
+
+            <tr>
+                <td>Phone</td>
+                <td>{{ application.personal.phone }}</td>
+            </tr>
+
+            <tr>
+                <td>Email</td>
+                <td>{{ application.personal.email }}</td>
+            </tr>
+
+            <tr>
+                <td>Address</td>
+                <td>{{ application.personal.address }}</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+
+
+
+    <div class="info-card">
+
+        <h2>🎓 Academic Information</h2>
+
+        <table>
+
+            <tr>
+                <td>Programme</td>
+                <td>{{ application.academic.programme }}</td>
+            </tr>
+
+            <tr>
+                <td>Year</td>
+                <td>{{ application.academic.year }}</td>
+            </tr>
+
+            <tr>
+                <td>Student Number</td>
+                <td>{{ application.academic.student_number }}</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+
+
+
+    <div class="info-card">
+
+        <h2>📝 Judiciary Responses</h2>
+
+        <ol>
+
+            <li>{{ application.answers.q1 }}</li>
+            <li>{{ application.answers.q2 }}</li>
+            <li>{{ application.answers.q3 }}</li>
+            <li>{{ application.answers.q4 }}</li>
+            <li>{{ application.answers.q5 }}</li>
+            <li>{{ application.answers.q6 }}</li>
+            <li>{{ application.answers.q7 }}</li>
+
+        </ol>
+
+    </div>
+
+
+
+
+    <div class="info-card">
+
+        <h2>📄 Documents</h2>
+
+
+        <p>
+
+            <strong>Student ID:</strong>
+
+            <a
+                class="dashboard-btn"
+                href="/judiciary_uploads/{{ application.documents['student_id'] }}"
+                target="_blank">
+
+                View Document
+
+            </a>
+
+        </p>
+
+
+        <br>
+
+
+        <p>
+
+            <strong>Payment Proof:</strong>
+
+            <a
+                class="dashboard-btn"
+                href="/judiciary_uploads/{{ application.documents['payment'] }}"
+                target="_blank">
+
+                View Document
+
+            </a>
+
+        </p>
+
+
+    </div>
+
+
+
+
+
+    <div class="recommend-card">
+
+        <h2>⚖ System Recommendation</h2>
+
+
+        <h1>
+            {{ application.recommended_role }}
+        </h1>
+
+
+        <h3>
+            Confidence:
+            {{ application.confidence }}%
+        </h3>
+
+
+    </div>
+
+
+
+
+
+    {% if application.get("scores") %}
+
+    <div class="info-card">
+
+        <h2>📊 Assessment Scores</h2>
+
+
+        <table>
+
+
+            <tr>
+
+                <th>Position</th>
+
+                <th>Score</th>
+
+            </tr>
+
+
+
+            {% for role, score in application.scores.items() %}
+
+
+            <tr>
+
+                <td>{{ role }}</td>
+
+                <td>{{ score }}%</td>
+
+            </tr>
+
+
+            {% endfor %}
+
+
+
+        </table>
+
+
+    </div>
+
+
+    {% endif %}
+
+
+
+
+
+
+
+    <form method="POST" class="action-buttons">
+
+
+        <button
+
+            class="approve-btn"
+
+            name="action"
+
+            value="approve">
+
+            ✅ Approve
+
+        </button>
+
+
+
+        <button
+
+            class="short-btn"
+
+            name="action"
+
+            value="shortlist">
+
+            ⭐ Shortlist
+
+        </button>
+
+
+
+
+        <button
+
+            class="reject-btn"
+
+            name="action"
+
+            value="reject">
+
+            ❌ Reject
+
+        </button>
+
+
+
+    </form>
+
+
+
+
+</div>
+
+
+{% endblock %}

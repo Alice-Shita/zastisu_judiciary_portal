@@ -1,0 +1,53 @@
+[
+    {
+        "id": "JUD001",
+        "password": "zasti001",
+        "name": "Applicant One"
+    },
+    {
+        "id": "JUD002",
+        "password": "zasti002",
+        "name": "Applicant Two",
+        "accepted_terms": true
+    },
+    {
+        "id": "JUD003",
+        "password": "zasti003",
+        "name": "Applicant Three"
+    },
+    {
+        "id": "JUD004",
+        "password": "zasti004",
+        "name": "Applicant Four"
+    },
+    {
+        "id": "JUD005",
+        "password": "zasti005",
+        "name": "Applicant Five"
+    },
+    {
+        "id": "JUD006",
+        "password": "zasti006",
+        "name": "Applicant Six"
+    },
+    {
+        "id": "JUD007",
+        "password": "zasti007",
+        "name": "Applicant Seven"
+    },
+    {
+        "id": "JUD008",
+        "password": "zasti008",
+        "name": "Applicant Eight"
+    },
+    {
+        "id": "JUD009",
+        "password": "zasti009",
+        "name": "Applicant Nine"
+    },
+    {
+        "id": "JUD010",
+        "password": "zasti010",
+        "name": "Applicant Ten"
+    }
+]
