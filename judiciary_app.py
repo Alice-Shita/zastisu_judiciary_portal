@@ -1,6 +1,7 @@
-from flask import Flask, render_template, request, redirect, session
+from flask import Flask, render_template, request, redirect, session, flash, send_from_directory
 from werkzeug.utils import secure_filename
 import os
+import json
 
 app = Flask(
     __name__,
@@ -310,6 +311,16 @@ def recommend_position(answers):
         "scores": scores
 
     }
+
+
+def load_admins():
+
+    if not os.path.exists("admin_users.json"):
+        return []
+
+    with open("admin_users.json", "r") as file:
+        return json.load(file)
+
 
 @app.route("/", methods=["GET", "POST"])
 def home():
