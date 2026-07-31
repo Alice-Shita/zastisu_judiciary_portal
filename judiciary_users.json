@@ -2,52 +2,61 @@
     {
         "id": "JUD001",
         "password": "zasti001",
-        "name": "Applicant One"
+        "name": "Alice Shita",
+        "accepted_terms": false
     },
     {
         "id": "JUD002",
         "password": "zasti002",
-        "name": "Applicant Two",
-        "accepted_terms": true
+        "name": "Abel Mwale",
+        "accepted_terms": false
     },
     {
         "id": "JUD003",
         "password": "zasti003",
-        "name": "Applicant Three"
+        "name": "Applicant Three",
+        "accepted_terms": false
     },
     {
         "id": "JUD004",
         "password": "zasti004",
-        "name": "Applicant Four"
+        "name": "Applicant Four",
+        "accepted_terms": false
     },
     {
         "id": "JUD005",
         "password": "zasti005",
-        "name": "Applicant Five"
+        "name": "Applicant Five",
+        "accepted_terms": false
     },
     {
         "id": "JUD006",
         "password": "zasti006",
-        "name": "Applicant Six"
+        "name": "Applicant Six",
+        "accepted_terms": false
     },
     {
         "id": "JUD007",
         "password": "zasti007",
-        "name": "Applicant Seven"
+        "name": "Applicant Seven",
+        "accepted_terms": false
     },
     {
         "id": "JUD008",
         "password": "zasti008",
-        "name": "Applicant Eight"
+        "name": "Applicant Eight",
+        "accepted_terms": false
     },
     {
         "id": "JUD009",
         "password": "zasti009",
-        "name": "Applicant Nine"
+        "name": "Applicant Nine",
+        "accepted_terms": false
     },
     {
         "id": "JUD010",
         "password": "zasti010",
-        "name": "Applicant Ten"
+        "name": "Applicant Ten",
+        "accepted_terms": false
     }
 ]
